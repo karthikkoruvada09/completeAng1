@@ -20,6 +20,21 @@ ngOnInit(){
   }
 
 
+  newMod(){
+    this.rou.navigate(['/profile/pro']);  //it will first check the profile path and navigates further
+
+  }
+
+  forms(){
+    this.rou.navigate(['/forms']); 
+  }
+
+  hooks(){
+    this.rou.navigate(['/hooks']); 
+
+  }
+
+
 
   
 }

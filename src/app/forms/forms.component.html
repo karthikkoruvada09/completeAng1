@@ -1,0 +1,68 @@
+/*BASIC FORM*/
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-sm-6"> 
+
+
+
+    {{ref.value|json}}   //we can use it to track 
+
+
+
+
+
+      <form #ref="ngForm" (ngSubmit)="method(ref.value)">
+        <div class="form-group">
+            <label for="name" > Name</label>
+            <input required minlength="5" maxlength="10" pattern="karthik" type="text" id="name" [(ngModel)]="obj.name" name="name" class="form-control"  #classy=ngModel>{{classy.className}}
+            <label *ngIf="classy.valid" >Please enter valid</label>
+            <label for="name" > Name</label>
+            <label for="name" > Name</label>
+
+        </div>
+        <div class="form-group">
+        <label for="Password" >Password</label>
+            <input required type="text" id="Passwordame" [(ngModel)]="obj.password" name="password" class="form-control"  #chec>{{chec.className}}
+        </div>
+
+        <input type="checkbox" name="check1" [(ngModel)]="obj.check1" >India
+        <input type="checkbox" name="check2" [(ngModel)]="obj.check2" >Pakistan<br>
+        <label>Select</label>
+        <input type="radio" [(ngModel)]="rad1" name="rad1" value="karthik"> Karthik
+        <input type="radio" [(ngModel)]="rad1" name="rad1" value="chinnu"> chinnu
+        <input type="radio" [(ngModel)]="rad1" name="rad1" value="neelima"> neelima<br>
+
+
+        <div class="form-group">
+            <label for="power">Hero Power</label>
+            <select class="form-control" id="power" [(ngModel)]="sel" name="sel" required>
+              <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+            </select>
+          </div>
+
+       <button type="submit">Login</button>
+      </form></div>
+    <div class="col-md-8 col-sm-6"></div>
+
+     
+  </div>
+  
+</div>
+
+
+
+/*
+power of *ngFor
+*/
+<div class="form-group">
+    <label for="power">Hero Power</label>
+    <select class="form-control" id="power" required>
+      <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+    </select>
+  </div>
+
+ 
+
+
+
+  

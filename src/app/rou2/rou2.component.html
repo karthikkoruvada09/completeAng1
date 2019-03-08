@@ -1,3 +1,82 @@
-<p>
-  rou2 works!
-</p>
+<h1>Pipe data</h1>
+<input type="text" [(ngModel)]="search">
+<li>
+  <table class="table table-striped table-dark">
+    <thead thead-light>
+      <tr>
+        
+        <th scope="col">Name</th>
+        <th scope="col">age</th>
+        <th scope="col">City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor = "let i of data |pipe:search">
+        
+        <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+
+        <td>{{i.city}}</td>
+
+       
+      </tr>
+     
+    </tbody>
+  </table>
+</li>
+
+
+
+
+//this pipes will get the results from custom pipes created
+
+
+{{ ["Saab", "Volvo", "BMW"] | pipe : "sort"}} 
+
+
+{{name()}}   //so,we can assign a method via interpolaton   //we cannot equate conditions in interpolaton
+
+
+<input disabled="{{false}}" type="text">  //binding of boolean values not possible <br>
+
+<input [disabled]="false" type="text">  //binding of boolean values  possible through data binding<br>
+
+<input id="{{kar}}" type="text">  //binding of strings  possible <br> 
+
+<input [id]="kar" type="text">  //binding of strings  possible with data binding ...equals to same as above <br>
+
+
+
+/*
+calss bindings
+*/
+<p [class]="!hasError ? 'text-success' : 'text-danger'">name</p>
+
+/*
+multiple calssse using ngCLass
+*/
+<p [ngClass]="nameClass">name</p>
+
+
+
+/*
+same Way ngStyle
+*/
+
+<p [ngStyle]="nameClass11">name</p>
+
+/*event binding*/
+
+<button type="text" (click)="nam()">click event </button>{{greet}} <br><br>
+
+
+
+
+/*event binding*/
+<button type="text" (click)="gett='welcome'">click event </button>{{gett}}
+
+
+
+
+
+

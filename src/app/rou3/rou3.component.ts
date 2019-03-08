@@ -27,8 +27,8 @@ export class Rou3Component implements OnInit {
   }
 
   back(){
-    let back=this.collectedId? this.collectedId:null;
-    this.router.navigate(['/rou1',{id:back,name:"yoyo"}])
+    let back=this.collectedId ? this.collectedId:null;
+    this.router.navigate(['/rou1',back,{d:back,name:"yoyo"}]);  //we can pass array of objects here
   }
 
 

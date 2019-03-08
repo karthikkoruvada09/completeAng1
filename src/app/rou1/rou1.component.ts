@@ -14,14 +14,19 @@ export class Rou1Component implements OnInit {
   data;
   backcollectedId; //this collects route parameters
 
-  backcollectedId2
+  backcollectedId2;
+  backcollectedId3
   ngOnInit() {
     this.ar.paramMap.subscribe((params:ParamMap)=>{
-      let id=parseInt(params.get('id'));
+      let id=(params.get('id'));
       let id2=(params.get('name'));
+      let id3=(params.get('d'));
+
 
       this.backcollectedId=id;
       this.backcollectedId2=id2;
+      this.backcollectedId3=id3;
+
 
     })
 
