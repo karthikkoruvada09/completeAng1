@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import{HttpClient,HttpParams}from'@angular/common/http';
-import { Observable } from 'rxjs';
+import{HttpClient,HttpParams,HttpErrorResponse}from'@angular/common/http';
+import { Observable, throwError } from 'rxjs';
 import { data } from 'src/daya';
+import {catchError} from'rxjs/operators';
 //import'rxjs/add/operator/catch'
 
 @Injectable({
@@ -24,8 +25,25 @@ export class SerService {
   }
 
 
+
+  //ERROR HANDLING OF HTTP  CALLS
   getParams(){
 let params1=new HttpParams().set('userId','1');
 return this.http.get('https://jsonplaceholder.typicode.com/posts?userId=1')
+.pipe(catchError(this.method))  
   }
+  method(error :HttpErrorResponse){
+    return throwError(error)
+  }
+
+  
+
+
+  
+  post(data){
+    console.log(data);
+this.http.get('http://localhost:4000/')
+         
+  }
+
 }

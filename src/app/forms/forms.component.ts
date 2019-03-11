@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SerService } from '../ser.service';
 
 @Component({
   selector: 'app-forms',
@@ -7,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ser:SerService) { }
 
   ngOnInit() {
   }
 
   method($event){
-console.log($event)
+console.log($event);
+this.ser.post($event);
   }
 
 
@@ -25,6 +27,8 @@ obj={
 }
 rad1="India";
 
-powers=['karthik','karthik','karthik','karthik']
+powers=['karthik1','karthik2','karthik3','karthik4']
+powers1=['karthik1','karthik2','karthik3','karthik4']
+
 
 }

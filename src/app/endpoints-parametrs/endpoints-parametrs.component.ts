@@ -14,10 +14,11 @@ export class ENDPOINTSParametrsComponent implements OnInit {
     this.get();
   }
 
-
+error;
   data:object;
   get(){
-    this.ser.getParams().subscribe(data=> this.data=data);
+    this.ser.getParams().subscribe(data=> this.data=data ,
+                  error=> this.error=error);
   }
 
 }
